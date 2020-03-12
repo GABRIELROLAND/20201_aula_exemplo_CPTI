@@ -32,12 +32,17 @@ namespace View
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
+            timer.Enabled = true;
         }
 
         private void MostrarAlgoNaTela(String _texto)
         {
             MessageBox.Show(_texto);
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            itemStatusHora.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

@@ -10,3 +10,4 @@ c:\users\26007051\documents\visual studio 2012\Projects\AulaExemplo20201\View\ob
 c:\users\26007051\documents\visual studio 2012\Projects\AulaExemplo20201\View\bin\Debug\Model.dll
 c:\users\26007051\documents\visual studio 2012\Projects\AulaExemplo20201\View\bin\Debug\Model.pdb
 c:\users\26007051\documents\visual studio 2012\Projects\AulaExemplo20201\View\obj\Debug\View.frmLogin.resources
+C:\Users\26007051\Documents\Visual Studio 2012\Projects\AulaExemplo20201\View\obj\Debug\View.frmCadPessoa.resources

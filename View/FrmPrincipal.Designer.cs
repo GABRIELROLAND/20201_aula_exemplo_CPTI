@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.itemMenuArquivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemMenuSalvar = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemMenuNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.itemMenuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemMenuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.barraTarefa = new System.Windows.Forms.ToolStrip();
+            this.itemBarraCadastro = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.itemBarraSair = new System.Windows.Forms.ToolStripButton();
             this.barraStatus = new System.Windows.Forms.StatusStrip();
             this.itemStatusHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUserLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.itemBarraCadastro = new System.Windows.Forms.ToolStripButton();
-            this.itemBarraSair = new System.Windows.Forms.ToolStripButton();
             this.menuPrincipal.SuspendLayout();
             this.barraTarefa.SuspendLayout();
             this.barraStatus.SuspendLayout();
@@ -63,31 +64,33 @@
             // itemMenuArquivo
             // 
             this.itemMenuArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemMenuSalvar,
+            this.itemMenuNovo,
             this.toolStripMenuItem2,
             this.itemMenuSair});
             this.itemMenuArquivo.Name = "itemMenuArquivo";
             this.itemMenuArquivo.Size = new System.Drawing.Size(61, 20);
             this.itemMenuArquivo.Text = "&Arquivo";
             // 
-            // itemMenuSalvar
+            // itemMenuNovo
             // 
-            this.itemMenuSalvar.Name = "itemMenuSalvar";
-            this.itemMenuSalvar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.itemMenuSalvar.Size = new System.Drawing.Size(145, 22);
-            this.itemMenuSalvar.Text = "Salvar";
+            this.itemMenuNovo.Name = "itemMenuNovo";
+            this.itemMenuNovo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.itemMenuNovo.Size = new System.Drawing.Size(152, 22);
+            this.itemMenuNovo.Text = "Novo+";
+            this.itemMenuNovo.Click += new System.EventHandler(this.itemMenuNovo_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(142, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // itemMenuSair
             // 
             this.itemMenuSair.Name = "itemMenuSair";
             this.itemMenuSair.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.itemMenuSair.Size = new System.Drawing.Size(145, 22);
+            this.itemMenuSair.Size = new System.Drawing.Size(152, 22);
             this.itemMenuSair.Text = "Sair";
+            this.itemMenuSair.Click += new System.EventHandler(this.itemMenuSair_Click);
             // 
             // ItemMenuEditar
             // 
@@ -109,15 +112,35 @@
             this.barraTarefa.TabIndex = 1;
             this.barraTarefa.Text = "toolStrip1";
             // 
+            // itemBarraCadastro
+            // 
+            this.itemBarraCadastro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.itemBarraCadastro.Image = global::View.Properties.Resources.usuario;
+            this.itemBarraCadastro.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.itemBarraCadastro.Name = "itemBarraCadastro";
+            this.itemBarraCadastro.Size = new System.Drawing.Size(44, 44);
+            this.itemBarraCadastro.Text = "Cadastrar Usuario";
+            this.itemBarraCadastro.Click += new System.EventHandler(this.itemBarraCadastro_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 47);
             // 
+            // itemBarraSair
+            // 
+            this.itemBarraSair.Image = global::View.Properties.Resources.sair;
+            this.itemBarraSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.itemBarraSair.Name = "itemBarraSair";
+            this.itemBarraSair.Size = new System.Drawing.Size(70, 44);
+            this.itemBarraSair.Text = "Sair";
+            this.itemBarraSair.Click += new System.EventHandler(this.itemBarraSair_Click);
+            // 
             // barraStatus
             // 
             this.barraStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemStatusHora});
+            this.itemStatusHora,
+            this.lblUserLogado});
             this.barraStatus.Location = new System.Drawing.Point(0, 379);
             this.barraStatus.Name = "barraStatus";
             this.barraStatus.Size = new System.Drawing.Size(669, 22);
@@ -129,6 +152,12 @@
             this.itemStatusHora.Name = "itemStatusHora";
             this.itemStatusHora.Size = new System.Drawing.Size(49, 17);
             this.itemStatusHora.Text = "00:00:00";
+            // 
+            // lblUserLogado
+            // 
+            this.lblUserLogado.Name = "lblUserLogado";
+            this.lblUserLogado.Size = new System.Drawing.Size(16, 17);
+            this.lblUserLogado.Text = "...";
             // 
             // timer
             // 
@@ -146,23 +175,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // itemBarraCadastro
-            // 
-            this.itemBarraCadastro.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.itemBarraCadastro.Image = global::View.Properties.Resources.usuario;
-            this.itemBarraCadastro.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.itemBarraCadastro.Name = "itemBarraCadastro";
-            this.itemBarraCadastro.Size = new System.Drawing.Size(44, 44);
-            this.itemBarraCadastro.Text = "Cadastrar Usuario";
-            // 
-            // itemBarraSair
-            // 
-            this.itemBarraSair.Image = global::View.Properties.Resources.sair;
-            this.itemBarraSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.itemBarraSair.Name = "itemBarraSair";
-            this.itemBarraSair.Size = new System.Drawing.Size(70, 44);
-            this.itemBarraSair.Text = "Sair";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +188,7 @@
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmPrincipal";
             this.Text = "Aplicação de Exemplo da Aula";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
@@ -193,7 +206,7 @@
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem itemMenuArquivo;
-        private System.Windows.Forms.ToolStripMenuItem itemMenuSalvar;
+        private System.Windows.Forms.ToolStripMenuItem itemMenuNovo;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem itemMenuSair;
         private System.Windows.Forms.ToolStripMenuItem ItemMenuEditar;
@@ -205,6 +218,7 @@
         private System.Windows.Forms.ToolStripStatusLabel itemStatusHora;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripStatusLabel lblUserLogado;
 
     }
 }

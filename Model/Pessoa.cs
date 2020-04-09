@@ -8,7 +8,7 @@ namespace Model
 {
     public class Pessoa
     {
-        public Int32 Id { get; set; }
+        public Int64 Cpf { get; set; }
 
         private String nome;
         public String Nome
@@ -16,6 +16,26 @@ namespace Model
             get { return nome; }
             set { nome = value; }
         }
+
+        public String Nascimento { get; set; }
+
+        public String Celular { get; set; }
+
+        public Int32 TipoEnd { get; set; }
+
+        public String Lograd { get; set; }
+
+        public Int32 Estado { get; set; }
+
+        public Int32 Cidade { get; set; }
+
+        public String Sexo { get; set; }
+
+        public String EstadoCivil { get; set; }
+
+        public Boolean Filhos { get; set; }
+
+        public Boolean Animais { get; set; }
 
     }
 }

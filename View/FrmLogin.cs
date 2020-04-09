@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace View
 {
@@ -19,19 +20,71 @@ namespace View
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            lblMsg.Visible = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmPrincipal form = new frmPrincipal();
+            try
+            {
+                Usuario user = new Usuario();
 
-            this.Hide();
+                user.Nome = txbUsuario.Text;
+                user.Senha = txbSenha.Text;
+
+                if (ValidarLogin(user))
+                {
+                    this.DialogResult = DialogResult.OK;
+
+                    this.Tag = user;
+
+                    this.Close();
+                }
+                else
+                {
+                    lblMsg.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO: " + ex.Message);
+            }
             
-            form.ShowDialog();
+        }
+
+        private bool ValidarLogin(Usuario _user)
+        {
+            bool resultado;
+            try
+            {
+                if (_user.Nome.Equals("thiago") && _user.Senha.Equals("thiago"))
+                {
+                    resultado = true;
+                }
+                else
+                {
+                    resultado = false;
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO: " + ex.Message);
+                return false;
+            }
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
+            lblMsg.Visible = false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
 
             this.Close();
-            
         }
     }
 }

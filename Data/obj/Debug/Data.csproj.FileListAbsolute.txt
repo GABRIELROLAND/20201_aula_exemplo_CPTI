@@ -12,3 +12,9 @@ D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\D
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Data\obj\Debug\Data.dll
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Data\obj\Debug\Data.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\bin\Debug\Data.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\bin\Debug\Data.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\bin\Debug\Model.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\bin\Debug\Model.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\obj\Debug\Data.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Data\obj\Debug\Data.pdb

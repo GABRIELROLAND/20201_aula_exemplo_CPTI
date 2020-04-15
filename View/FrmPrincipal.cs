@@ -78,5 +78,12 @@ namespace View
 
             form.ShowDialog();
         }
+
+        private void itemBarraListagem_Click(object sender, EventArgs e)
+        {
+            frmListaPessoas form = new frmListaPessoas();
+
+            form.ShowDialog();
+        }
     }
 }

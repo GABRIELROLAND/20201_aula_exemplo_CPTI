@@ -21,7 +21,18 @@ namespace View
 
         private void frmCadPessoa_Load(object sender, EventArgs e)
         {
+            //Verificar se tem dados para carregar
+            if (this.Tag != null)
+            {
+                btnAtualizar.Visible = true;
 
+                mtbCPF.Enabled = false;
+
+                Pessoa pessoa = (Pessoa)this.Tag;
+
+                //Carregamento dos Dados do Objeto pessoa para o Form
+                CarregarFormDePessoa(pessoa);
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -95,6 +106,57 @@ namespace View
             }
 
             return p;
+        }
+
+        private void CarregarFormDePessoa(Pessoa _p)
+        {
+            try
+            {
+                mtbCPF.Text = _p.Cpf.ToString();
+                txbNome.Text = _p.Nome;
+                mtbNascimento.Text = _p.Nascimento;
+                mtbCel.Text = _p.Celular;
+                ltbTipo.SelectedIndex = _p.TipoEnd;
+                txbLogradouro.Text = _p.Lograd;
+                cmbEstado.SelectedIndex = _p.Estado;
+
+                cmbCidade.SelectedIndex = _p.Cidade;
+                if (_p.Sexo.Equals("masculino"))
+                {
+                    rdbMasculino.Checked = true;
+                }
+                else
+                {
+                    rdbFeminino.Checked = true;
+                }
+
+                if (_p.EstadoCivil.Equals("casado"))
+                {
+                    rdbCasado.Checked = true;
+                }
+                else
+                {
+                    rdbSolteiro.Checked = true;
+                }
+
+                ckbFilhos.Checked = _p.Filhos;
+                ckbAnimais.Checked = _p.Animais;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR FORMULARIO: " + ex.Message);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            //Método para alterar dados no BD
         }
     }
 }

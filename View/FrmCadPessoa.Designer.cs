@@ -47,24 +47,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ltbTipo = new System.Windows.Forms.ListBox();
             this.gpbDadosAdicionais = new System.Windows.Forms.GroupBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.rdbMasculino = new System.Windows.Forms.RadioButton();
-            this.rdbFeminino = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ckbAnimais = new System.Windows.Forms.CheckBox();
+            this.ckbFilhos = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbCasado = new System.Windows.Forms.RadioButton();
             this.rdbSolteiro = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ckbFilhos = new System.Windows.Forms.CheckBox();
-            this.ckbAnimais = new System.Windows.Forms.CheckBox();
+            this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.rdbFeminino = new System.Windows.Forms.RadioButton();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbDadosPrincipais.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
             this.gpbDadosAdicionais.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbDadosPrincipais
@@ -268,55 +268,47 @@
             this.gpbDadosAdicionais.TabStop = false;
             this.gpbDadosAdicionais.Text = "Dados Adicionais";
             // 
-            // btnSalvar
+            // groupBox3
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(30, 488);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 3;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.groupBox3.Controls.Add(this.ckbAnimais);
+            this.groupBox3.Controls.Add(this.ckbFilhos);
+            this.groupBox3.Location = new System.Drawing.Point(290, 29);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(147, 100);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Info";
             // 
-            // btnAtualizar
+            // ckbAnimais
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(127, 488);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 4;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.ckbAnimais.AutoSize = true;
+            this.ckbAnimais.Location = new System.Drawing.Point(17, 71);
+            this.ckbAnimais.Name = "ckbAnimais";
+            this.ckbAnimais.Size = new System.Drawing.Size(62, 17);
+            this.ckbAnimais.TabIndex = 1;
+            this.ckbAnimais.Text = "Animais";
+            this.ckbAnimais.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // ckbFilhos
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(387, 488);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.ckbFilhos.AutoSize = true;
+            this.ckbFilhos.Location = new System.Drawing.Point(17, 31);
+            this.ckbFilhos.Name = "ckbFilhos";
+            this.ckbFilhos.Size = new System.Drawing.Size(53, 17);
+            this.ckbFilhos.TabIndex = 0;
+            this.ckbFilhos.Text = "Filhos";
+            this.ckbFilhos.UseVisualStyleBackColor = true;
             // 
-            // rdbMasculino
+            // groupBox2
             // 
-            this.rdbMasculino.AutoSize = true;
-            this.rdbMasculino.Location = new System.Drawing.Point(29, 31);
-            this.rdbMasculino.Name = "rdbMasculino";
-            this.rdbMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rdbMasculino.TabIndex = 0;
-            this.rdbMasculino.TabStop = true;
-            this.rdbMasculino.Text = "Masculino";
-            this.rdbMasculino.UseVisualStyleBackColor = true;
-            // 
-            // rdbFeminino
-            // 
-            this.rdbFeminino.AutoSize = true;
-            this.rdbFeminino.Location = new System.Drawing.Point(29, 71);
-            this.rdbFeminino.Name = "rdbFeminino";
-            this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
-            this.rdbFeminino.TabIndex = 1;
-            this.rdbFeminino.TabStop = true;
-            this.rdbFeminino.Text = "Feminino";
-            this.rdbFeminino.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.rdbCasado);
+            this.groupBox2.Controls.Add(this.rdbSolteiro);
+            this.groupBox2.Location = new System.Drawing.Point(168, 29);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(116, 100);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Estado Civil";
             // 
             // rdbCasado
             // 
@@ -351,47 +343,58 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
             // 
-            // groupBox2
+            // rdbMasculino
             // 
-            this.groupBox2.Controls.Add(this.rdbCasado);
-            this.groupBox2.Controls.Add(this.rdbSolteiro);
-            this.groupBox2.Location = new System.Drawing.Point(168, 29);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(116, 100);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Estado Civil";
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Location = new System.Drawing.Point(29, 31);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rdbMasculino.TabIndex = 0;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // rdbFeminino
             // 
-            this.groupBox3.Controls.Add(this.ckbAnimais);
-            this.groupBox3.Controls.Add(this.ckbFilhos);
-            this.groupBox3.Location = new System.Drawing.Point(290, 29);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(147, 100);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Info";
+            this.rdbFeminino.AutoSize = true;
+            this.rdbFeminino.Location = new System.Drawing.Point(29, 71);
+            this.rdbFeminino.Name = "rdbFeminino";
+            this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rdbFeminino.TabIndex = 1;
+            this.rdbFeminino.TabStop = true;
+            this.rdbFeminino.Text = "Feminino";
+            this.rdbFeminino.UseVisualStyleBackColor = true;
             // 
-            // ckbFilhos
+            // btnSalvar
             // 
-            this.ckbFilhos.AutoSize = true;
-            this.ckbFilhos.Location = new System.Drawing.Point(17, 31);
-            this.ckbFilhos.Name = "ckbFilhos";
-            this.ckbFilhos.Size = new System.Drawing.Size(53, 17);
-            this.ckbFilhos.TabIndex = 0;
-            this.ckbFilhos.Text = "Filhos";
-            this.ckbFilhos.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(30, 488);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 3;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // ckbAnimais
+            // btnAtualizar
             // 
-            this.ckbAnimais.AutoSize = true;
-            this.ckbAnimais.Location = new System.Drawing.Point(17, 71);
-            this.ckbAnimais.Name = "ckbAnimais";
-            this.ckbAnimais.Size = new System.Drawing.Size(62, 17);
-            this.ckbAnimais.TabIndex = 1;
-            this.ckbAnimais.Text = "Animais";
-            this.ckbAnimais.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Location = new System.Drawing.Point(30, 488);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnAtualizar.TabIndex = 4;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Visible = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(387, 488);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmCadPessoa
             // 
@@ -415,12 +418,12 @@
             this.gpbEndereco.ResumeLayout(false);
             this.gpbEndereco.PerformLayout();
             this.gpbDadosAdicionais.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

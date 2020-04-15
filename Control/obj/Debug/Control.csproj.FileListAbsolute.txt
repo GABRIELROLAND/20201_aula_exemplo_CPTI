@@ -16,3 +16,12 @@ D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\C
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Control\obj\Debug\Control.dll
 D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI-master\Control\obj\Debug\Control.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Control.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Control.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Data.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Model.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Data.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\bin\Debug\Model.pdb
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\obj\Debug\Control.dll
+D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\Control\obj\Debug\Control.pdb

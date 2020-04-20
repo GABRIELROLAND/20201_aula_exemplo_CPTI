@@ -51,7 +51,7 @@ namespace Data
 
         public Dictionary<Int64, Pessoa> ListarPessoasNoArquivo()
         {
-            String caminhoArquivo = @"D:\Thiago\Documents\Visual Studio 2012\20201_aula_exemplo_CPTI-master\bd.txt";
+            String caminhoArquivo = @"D:\Thiago\Documents\Visual Studio 2012\Projects\20201_aula_exemplo_CPTI\bd.txt";
 
             Dictionary<Int64, Pessoa> tabelaPessoas = new Dictionary<Int64, Pessoa>();
 

@@ -33,7 +33,7 @@ namespace View
             {
                 PessoaCtrl control = new PessoaCtrl();
 
-                tabelaPessoas = control.ListarPessoasNoArquivo();
+                tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('t', null);
 
                 foreach (Pessoa item in tabelaPessoas.Values)
                 {

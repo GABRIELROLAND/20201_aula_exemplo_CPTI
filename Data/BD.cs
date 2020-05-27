@@ -95,5 +95,31 @@ namespace Data
                 throw new Exception(ex.Message);
             }
         }
+
+        public static Object ExecutarInsertComRetornoID(String _SQL, List<SqlCeParameter> _parametros)
+        {
+            try
+            {
+                AbrirConexao();
+
+                //Executar INSERT do registro no banco de dados
+                SqlCeCommand comando = new SqlCeCommand(_SQL, conexao);
+                comando.Parameters.AddRange(_parametros.ToArray());
+                comando.ExecuteNonQuery();
+
+                //Executar o SELECT e pegar o último ID inserido (Que é a chave primária da coluna)
+                comando.CommandText = "SELECT @@IDENTITY";
+                Object chavePrimaria = comando.ExecuteScalar();
+
+                FecharConexao();
+
+                return chavePrimaria;
+            }
+            catch (Exception ex)
+            {
+                FecharConexao();
+                throw new Exception("ERRO AO EXECUTAR OPERAÇÃO DE INSERT COM RETORNO DE ID NO BD: " + ex.Message);
+            }
+        }
     }
 }

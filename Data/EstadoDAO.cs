@@ -28,7 +28,7 @@ namespace Data
 
                     CidadeDAO daoCidade = new CidadeDAO();
 
-                    estado.Cidades = daoCidade.ListarCidadesPorEstado(estado.ID);
+                    //estado.Cidades = daoCidade.ListarCidadesPorEstado(estado.ID);
 
                     mapaEstados.Add(estado.ID, estado);
                 }

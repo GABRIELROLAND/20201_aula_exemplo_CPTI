@@ -21,6 +21,12 @@ namespace View
 
         private void frmCadPessoa_Load(object sender, EventArgs e)
         {
+            //Carregamento dos Estados no compontente cmbEstado (ComboBox)
+            CarregarComboEstados();
+
+            //Carregamento das Cidades no compontente cmbCidade (ComboBox)
+            CarregarComboCidades();
+
             //Verificar se tem dados para carregar
             if (this.Tag != null)
             {
@@ -43,8 +49,8 @@ namespace View
 
                 PessoaCtrl control = new PessoaCtrl();
 
-
-                if (control.SalvarPessoaNoArquivo(p))
+                //Linha trocada para que o processo seja feito no BD, e não mais no arquivo
+                if ((bool)control.BD('i', p))
                 {
                     MessageBox.Show("Cadastro efetuado com sucesso!!!");
                 }
@@ -75,8 +81,8 @@ namespace View
                 
                 p.TipoEnd = ltbTipo.SelectedIndex;
                 p.Lograd = txbLogradouro.Text;
-                p.Estado = cmbEstado.SelectedIndex;
-                p.Cidade = cmbCidade.SelectedIndex;
+                p.Estado = (Int32)cmbEstado.SelectedValue;
+                p.Cidade = (Int32)cmbCidade.SelectedValue;
 
                 if (rdbMasculino.Checked)
 	            {
@@ -118,9 +124,9 @@ namespace View
                 mtbCel.Text = _p.Celular;
                 ltbTipo.SelectedIndex = _p.TipoEnd;
                 txbLogradouro.Text = _p.Lograd;
-                cmbEstado.SelectedIndex = _p.Estado;
-
-                cmbCidade.SelectedIndex = _p.Cidade;
+                cmbEstado.SelectedValue = _p.Estado;
+                cmbCidade.SelectedValue = _p.Cidade;
+                
                 if (_p.Sexo.Equals("masculino"))
                 {
                     rdbMasculino.Checked = true;
@@ -157,6 +163,60 @@ namespace View
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             //Método para alterar dados no BD
+            try
+            {
+                Pessoa p = CarregarPessoaDoForm();
+
+                PessoaCtrl controlPessoa = new PessoaCtrl();
+
+                if ((bool)controlPessoa.BD('u', p))
+                {
+                    MessageBox.Show("Cadastro atualizado com sucesso!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO ATUALIZAR DADOS: " + ex.Message);
+            }
+        }
+
+        private void CarregarComboEstados()
+        {
+            try
+            {
+                EstadoCtrl controlEstado = new EstadoCtrl();
+
+                Dictionary<Int32, Estado> mapaEstados = (Dictionary<Int32, Estado>)controlEstado.BD('t', null);
+
+                List<Estado> listaEstados = mapaEstados.Values.ToList<Estado>();
+
+                cmbEstado.DisplayMember = "descricao";
+                cmbEstado.ValueMember = "id";
+
+                cmbEstado.DataSource = listaEstados;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR COMBO ESTADOS: " + ex.Message);
+            }
+        }
+        public void CarregarComboCidades()
+        {
+            try
+            {
+                CidadeCtrl controlCidade = new CidadeCtrl();
+
+                List<Cidade> listaCidades = ((Dictionary<Int32, Cidade>)controlCidade.BD('t', null)).Values.ToList<Cidade>();
+
+                cmbCidade.DisplayMember = "descricao";
+                cmbCidade.ValueMember = "id";
+
+                cmbCidade.DataSource = listaCidades;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO CARREGAR COMBO CIDADES: " + ex.Message);
+            }
         }
     }
 }

@@ -172,14 +172,6 @@
             // cmbCidade
             // 
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Items.AddRange(new object[] {
-            "Araruama",
-            "Niterói",
-            "Rio de Janeiro",
-            "Belo Horizonte",
-            "Ouro Preto",
-            "São Paulo",
-            "Taubaté"});
             this.cmbCidade.Location = new System.Drawing.Point(317, 93);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(133, 21);
@@ -188,10 +180,6 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "RJ",
-            "MG",
-            "SP"});
             this.cmbEstado.Location = new System.Drawing.Point(317, 45);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(133, 21);

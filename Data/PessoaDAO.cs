@@ -229,9 +229,9 @@ namespace Data
             try
             {
                 String SQL = String.Format("UPDATE pessoa SET "
-                + "nome = {0}, nascimento = {1}, cel = {2}, tipo_end = {3}, "
-                + "endereco = {4}, estado = {5}, cidade = {6}, sexo = {7}, "
-                + "est_civil = {8}, filhos = {9}, animais = {10} WHERE cpf = {11};",
+                + "nome = '{0}', nascimento = '{1}', cel = '{2}', tipo_end = {3}, "
+                + "endereco = '{4}', estado = {5}, cidade = {6}, sexo = '{7}', "
+                + "est_civil = '{8}', filhos = '{9}', animais = '{10}' WHERE cpf = {11};",
                     _obj.Nome,
                     _obj.Nascimento,
                     _obj.Celular,
@@ -241,8 +241,8 @@ namespace Data
                     _obj.Cidade,
                     _obj.Sexo,
                     _obj.EstadoCivil,
-                    _obj.Animais,
                     _obj.Filhos,
+                    _obj.Animais,
                     _obj.Cpf);
 
                 int linhaAfetadas = BD.ExecutarIDU(SQL);
@@ -265,7 +265,7 @@ namespace Data
             bool resultado = false;
             try
             {
-                String SQL = String.Format("DELETE FROM pessoa WHERE id = {0};", _cpf);
+                String SQL = String.Format("DELETE FROM pessoa WHERE cpf = {0};", _cpf);
 
                 int linhaAfetadas = BD.ExecutarIDU(SQL);
 

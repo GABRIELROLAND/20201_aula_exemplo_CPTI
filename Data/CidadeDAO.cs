@@ -88,9 +88,6 @@ namespace Data
 
                     listaCidades.Add(o);
                 }
-
-                data.Close();
-                BD.FecharConexao();
             }
             catch (Exception ex)
             {

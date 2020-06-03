@@ -31,6 +31,8 @@ namespace View
         {
             try
             {
+                dgvDados.Rows.Clear();
+
                 PessoaCtrl control = new PessoaCtrl();
 
                 tabelaPessoas = (Dictionary<Int64, Pessoa>)control.BD('t', null);
@@ -64,12 +66,35 @@ namespace View
                 form.Tag = p;
 
                 form.ShowDialog();
+
+                CarregarGridDoBD();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERRO AO SELECIONAR CADASTRO: " + ex.Message);
             }
             
+        }
+
+        private void iMenuDeletar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Int64 cpf = Convert.ToInt64(dgvDados.SelectedRows[0].Cells[0].Value);
+
+                PessoaCtrl control = new PessoaCtrl();
+
+                if ((bool)control.BD('d', cpf))
+                {
+                    MessageBox.Show("Cadastro deletado com sucesso!!");
+                }
+
+                CarregarGridDoBD();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO AO DELETAR CADASTRO: " + ex.Message);
+            }
         }
     }
 }
